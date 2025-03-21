@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    
+    <AssemblyName>com.github.zehsteam.$(MSBuildProjectName)</AssemblyName> <!-- PLUGIN_GUID -->
+    <Product>$(MSBuildProjectName)</Product>                               <!-- PLUGIN_NAME -->
+    <Version>1.0.0</Version>                                               <!-- PLUGIN_VERSION -->
+    <Authors>Zehs</Authors>
+    <Description></Description>
+    <Copyright>Copyright © 2025 Zehs</Copyright>
+    
+    <RootNamespace>com.github.zehsteam.$(MSBuildProjectName)</RootNamespace>
+    
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    
+    <IncludeSymbols>true</IncludeSymbols>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>embedded</DebugType>
+    
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json;
+    </RestoreAdditionalProjectSources>
+  </PropertyGroup>
+  
+  <Target Name="ClearReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" />
+    </ItemGroup>
+  </Target>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.21" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="R.E.P.O.GameLibs.Steam" Version="0.1.2-ngd.0" />
+  </ItemGroup>
+  
+  <!-- EDIT THESE SETTINGS -->
+  <PropertyGroup>
+    <!-- Gale profile name -->
+    <GaleProfile>Mod Development</GaleProfile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- Gale plugins folder -->
+    <GalePluginsFolder>$(AppData)\com.kesomannen.gale\repo\profiles\$(GaleProfile)\BepInEx\plugins</GalePluginsFolder>
+    
+    <!-- Gale plugin folder -->
+    <GalePluginFolder>$(GalePluginsFolder)\Zehs-$(MSBuildProjectName)</GalePluginFolder>
+  </PropertyGroup>
+  
+  <!-- Copy files to Gale Zehs-TransferableUpgrades plugin folder -->
+  <Target Name="CopyToGalePluginsFolder" AfterTargets="PostBuildEvent">
+    <Copy DestinationFolder="$(GalePluginFolder)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" SourceFiles="$(TargetPath)" />
+  </Target>
+</Project>
