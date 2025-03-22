@@ -25,7 +25,7 @@ internal static class ConfigManager
         ExtendedLogging = ConfigFile.Bind("General", "ExtendedLogging", defaultValue: false, "Enable extended logging.");
 
         // Photon
-        Photon_AppIdRealtime = ConfigFile.Bind("Photon", "AppIdRealtime", defaultValue: "", "The AppID of your Photon Pun application.");
-        Photon_AppIdVoice =    ConfigFile.Bind("Photon", "AppIdVoice",    defaultValue: "", "The AppID of your Photon Voice application.");
+        Photon_AppIdRealtime = ConfigFile.Bind("Photon", "AppIdRealtime", defaultValue: "", "The App ID of your Photon Pun application.");
+        Photon_AppIdVoice =    ConfigFile.Bind("Photon", "AppIdVoice",    defaultValue: "", "The App ID of your Photon Voice application.");
     }
 }

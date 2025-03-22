@@ -61,7 +61,7 @@
     <GalePluginFolder>$(GalePluginsFolder)\Zehs-$(MSBuildProjectName)</GalePluginFolder>
   </PropertyGroup>
   
-  <!-- Copy files to Gale Zehs-TransferableUpgrades plugin folder -->
+  <!-- Copy files to Gale Zehs-LocalMultiplayer plugin folder -->
   <Target Name="CopyToGalePluginsFolder" AfterTargets="PostBuildEvent">
     <Copy DestinationFolder="$(GalePluginFolder)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" SourceFiles="$(TargetPath)" />
   </Target>

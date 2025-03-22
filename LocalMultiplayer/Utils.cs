@@ -29,7 +29,7 @@ internal static class Utils
     public static ConfigFile CreateGlobalConfigFile(BaseUnityPlugin plugin, string name = null, bool saveOnInit = false)
     {
         BepInPlugin metadata = MetadataHelper.GetMetadata(plugin);
-        string path = Path.Combine(Application.persistentDataPath, metadata.Name);
+        string path = GetPluginPersistentDataPath();
         name ??= "global";
         return CreateConfigFile(plugin, path, name, saveOnInit);
     }
