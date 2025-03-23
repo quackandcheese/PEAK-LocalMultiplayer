@@ -18,12 +18,12 @@ internal static class GlobalSaveHelper
 
     public static T Load<T>(string key, T defaultValue = default)
     {
-        return _jsonSave.Load<T>(key, defaultValue);
+        return _jsonSave.Load(key, defaultValue);
     }
 
     public static bool TryLoad<T>(string key, out T value)
     {
-        return _jsonSave.TryLoad<T>(key, out value);
+        return _jsonSave.TryLoad(key, out value);
     }
 
     public static bool Save<T>(string key, T value)

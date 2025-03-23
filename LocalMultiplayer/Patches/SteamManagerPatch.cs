@@ -5,12 +5,23 @@ using Photon.Realtime;
 using Steamworks;
 using Steamworks.Data;
 using System;
+using UnityEngine;
 
 namespace com.github.zehsteam.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(SteamManager))]
 internal static class SteamManagerPatch
 {
+    [HarmonyPatch(nameof(SteamManager.Start))]
+    [HarmonyPostfix]
+    private static void StartPatch()
+    {
+        if (!IsValidClient())
+        {
+            Application.Quit();
+        }
+    }
+
     [HarmonyPatch(nameof(SteamManager.OnLobbyCreated))]
     [HarmonyPostfix]
     private static void OnLobbyCreatedPatch(ref Result _result, ref Lobby _lobby)
@@ -29,5 +40,18 @@ internal static class SteamManagerPatch
     {
         PhotonNetwork.AuthValues = new AuthenticationValues(Guid.NewGuid().ToString());
         return false;
+    }
+
+    private static bool IsValidClient()
+    {
+        AuthTicket authTicket = SteamManager.instance.steamAuthTicket;
+
+        if (authTicket == null)
+        {
+            return false;
+        }
+
+        BeginAuthResult beginAuthResult = SteamUser.BeginAuthSession(authTicket.Data, SteamClient.SteamId);
+        return beginAuthResult == BeginAuthResult.OK;
     }
 }
