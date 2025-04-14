@@ -27,8 +27,12 @@ internal class Plugin : BaseUnityPlugin
 
         _harmony.PatchAll(typeof(NetworkConnectPatch));
         _harmony.PatchAll(typeof(SteamManagerPatch));
+        _harmony.PatchAll(typeof(DataDirectorPatch));
         _harmony.PatchAll(typeof(MenuPageMainPatch));
+        _harmony.PatchAll(typeof(PlayerAvatarPatch));
 
         ConfigManager.Initialize(Config);
+
+        SteamClientPatch.PatchAll(_harmony);
     }
 }

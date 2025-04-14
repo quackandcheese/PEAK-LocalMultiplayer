@@ -16,7 +16,6 @@
     
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     
-    <IncludeSymbols>true</IncludeSymbols>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>embedded</DebugType>
     

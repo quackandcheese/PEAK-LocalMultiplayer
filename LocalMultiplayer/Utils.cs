@@ -22,13 +22,11 @@ internal static class Utils
 
     public static ConfigFile CreateLocalConfigFile(BaseUnityPlugin plugin, string name = null, bool saveOnInit = false)
     {
-        BepInPlugin metadata = MetadataHelper.GetMetadata(plugin);
         return CreateConfigFile(plugin, Paths.ConfigPath, name, saveOnInit);
     }
 
     public static ConfigFile CreateGlobalConfigFile(BaseUnityPlugin plugin, string name = null, bool saveOnInit = false)
     {
-        BepInPlugin metadata = MetadataHelper.GetMetadata(plugin);
         string path = GetPluginPersistentDataPath();
         name ??= "global";
         return CreateConfigFile(plugin, path, name, saveOnInit);

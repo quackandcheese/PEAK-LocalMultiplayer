@@ -12,6 +12,14 @@ namespace com.github.zehsteam.LocalMultiplayer.Patches;
 [HarmonyPatch(typeof(SteamManager))]
 internal static class SteamManagerPatch
 {
+    [HarmonyPatch(nameof(SteamManager.Awake))]
+    [HarmonyPostfix]
+    [HarmonyPriority(Priority.First)]
+    private static void AwakePatch()
+    {
+        SteamAccountManager.Initialize();
+    }
+
     [HarmonyPatch(nameof(SteamManager.Start))]
     [HarmonyPostfix]
     private static void StartPatch()
@@ -31,7 +39,10 @@ internal static class SteamManagerPatch
             return;
         }
 
-        GlobalSaveHelper.Save("SteamLobbyId", _lobby.Id.ToString());
+        GlobalSaveHelper.SteamLobbyId.Value = _lobby.Id;
+
+        SteamAccountManager.UseSpoofAccount = false;
+        SteamAccountManager.ResetSpoofAccountsInUse();
     }
 
     [HarmonyPatch(nameof(SteamManager.SendSteamAuthTicket))]

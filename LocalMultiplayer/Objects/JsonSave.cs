@@ -44,6 +44,8 @@ internal class JsonSave
 
     public bool TryLoad<T>(string key, out T value)
     {
+        _data = ReadFile();
+
         value = default;
 
         if (_data == null)
@@ -81,6 +83,8 @@ internal class JsonSave
 
     public bool Save<T>(string key, T value)
     {
+        _data = ReadFile();
+
         if (_data == null)
         {
             Logger.LogError($"Save: Data is null. Cannot save key: {key}.");
