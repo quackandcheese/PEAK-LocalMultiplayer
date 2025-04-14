@@ -1,5 +1,5 @@
 # LocalMultiplayer
-[![GitHub](https://img.shields.io/badge/GitHub-LocalMultiplayer-brightgreen?style=for-the-badge&logo=GitHub)]()
+[![GitHub](https://img.shields.io/badge/GitHub-LocalMultiplayer-brightgreen?style=for-the-badge&logo=GitHub)](https://github.com/ZehsTeam/REPO-LocalMultiplayer)
 [![Thunderstore Version](https://img.shields.io/thunderstore/v/Zehs/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/repo/p/Zehs/LocalMultiplayer/)
 [![Thunderstore Downloads](https://img.shields.io/thunderstore/dt/Zehs/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/repo/p/Zehs/LocalMultiplayer/)
 
@@ -8,11 +8,11 @@
 ## Features
 This mod allows you to connect two R.E.P.O. instances to the same multiplayer game using one Steam account.
 
+## Local Co-Op
+If you want to use this mod for local co-op, I recommend using [Nucleus Co-Op](https://nucleus-coop.github.io) to control multiple instances of the game simultaneously.
+
 ## Usage
 This mod requires you to create your own Photon cloud applications. (This does not require any payment.)
-
-> [!IMPORTANT]
-> If you are using the Thunderstore or r2modman mod managers, this mod will not work unless you edit your launch options for R.E.P.O. in Steam to allow multiple instances to run at the same time. (This will work if you are using the Gale mod manager and set your launch mode in Gale to Direct.)
 
 ### 1. Photon
 1. Go to the [Photon Engine](https://www.photonengine.com) website and sign in or create an account.
@@ -27,7 +27,24 @@ This mod requires you to create your own Photon cloud applications. (This does n
 2. Set `AppIdRealtime` to your Photon `Pun` application's App ID.
 3. Set `AppIdVoice` to your Photon `Voice` application's App ID.
 
-### 3. Testing
+### 3. Steam Launch Options
+
+> [!TIP]
+> If you use the Gale mod manager, you can just set your launch mode to Direct in the settings and skip this step.
+
+1. Go to Steam and right-click R.E.P.O.
+2. Click "Properties..."
+3. In the General tab, you should see an input field called "LAUNCH OPTIONS"
+4. Put this for your launch options:
+```
+--doorstop-enable true --doorstop-target
+"C:/Users/PUT_YOUR_USER_HERE/AppData/Roaming/Thunderstore Mod Manager/DataFolder/LethalCompany/profiles/PUT_YOUR_PROFILE_NAME_HERE/BepInEx/core/BepInEx.Preloader.dll"
+```
+
+> [!IMPORTANT]
+> The file path must lead to your profile's `BepInEx.Preloader.dll` file in the `BepInEx/core` folder.
+
+### 4. Testing
 1. Open the game.
 2. Go to Settings > Graphics.
 3. Set your window mode to Windowed. (This is for easier testing. See screenshots for an example.)
@@ -60,15 +77,13 @@ You can locate the config file at this path:
 | [R.E.P.O. Modding Server](https://discord.com/invite/vPJtKhYAFe) | `#released-mods` | [LocalMultiplayer](https://discord.com/channels/1344557689979670578/1352815417579798652) |
 
 - **GitHub Issues Page:** [LocalMultiplayer](https://github.com/ZehsTeam/REPO-LocalMultiplayer/issues)
-- **Email:** crithaxxog@gmail.com
-- **Twitch:** [CritHaxXoG](https://www.twitch.tv/crithaxxog)
-- **YouTube:** [Zehs](https://www.youtube.com/channel/UCb4VEkc-_im0h8DKXlwmIAA)
+- **Links:** https://solo.to/crithaxxog
 
 [<img src="https://i.imgur.com/duJZQTS.png" width="200px">](https://ko-fi.com/zehsteam)
 
 ## Screenshots
-<img src="https://i.imgur.com/oi0JZpK.png" width="100%">
+<img src="https://i.imgur.com/VhVYtPV.png" width="100%">
 
 ----
 
-<img src="https://i.imgur.com/37y01lX.png" width="100%">
+<img src="https://i.imgur.com/nHoK8yb.png" width="100%">
