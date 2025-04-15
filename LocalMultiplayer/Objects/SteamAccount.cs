@@ -19,11 +19,6 @@ public struct SteamAccount : IEquatable<SteamAccount>
         ColorId = colorIndex;
     }
 
-    public void SetColorId(int id)
-    {
-        ColorId = id;
-    }
-
     public bool Equals(SteamAccount other)
     {
         return SteamId == other.SteamId;

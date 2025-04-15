@@ -37,8 +37,7 @@ This mod requires you to create your own Photon cloud applications. (This does n
 3. In the General tab, you should see an input field called "LAUNCH OPTIONS"
 4. Put this for your launch options:
 ```
---doorstop-enable true --doorstop-target
-"C:/Users/PUT_YOUR_USER_HERE/AppData/Roaming/Thunderstore Mod Manager/DataFolder/LethalCompany/profiles/PUT_YOUR_PROFILE_NAME_HERE/BepInEx/core/BepInEx.Preloader.dll"
+--doorstop-enable true --doorstop-target "YOUR_PROFILE_LOCATION_HERE\BepInEx\core\BepInEx.Preloader.dll"
 ```
 
 > [!IMPORTANT]

@@ -7,7 +7,7 @@
     
     <AssemblyName>com.github.zehsteam.$(MSBuildProjectName)</AssemblyName> <!-- PLUGIN_GUID -->
     <Product>$(MSBuildProjectName)</Product>                               <!-- PLUGIN_NAME -->
-    <Version>1.2.0</Version>                                               <!-- PLUGIN_VERSION -->
+    <Version>1.3.0</Version>                                               <!-- PLUGIN_VERSION -->
     <Authors>Zehs</Authors>
     <Description>Play multiplayer locally with one Steam account.</Description>
     <Copyright>Copyright © 2025 Zehs</Copyright>

@@ -10,9 +10,10 @@ namespace com.github.zehsteam.LocalMultiplayer;
 internal static class SteamAccountManager
 {
     public static SteamAccount RealAccount { get; private set; }
-    public static SteamAccount SpoofAccount { get; private set; }
 
-    public static bool UseSpoofAccount { get; set; }
+    public static SteamAccount SpoofAccount;
+
+    public static bool IsUsingSpoofAccount => SpoofAccount != default;
 
     private static bool _initialized;
 
@@ -23,7 +24,6 @@ internal static class SteamAccountManager
             return;
         }
 
-        UseSpoofAccount = false;
         RealAccount = new SteamAccount(SteamClient.Name, SteamClient.SteamId);
 
         CreateSpoofAccounts();
@@ -54,32 +54,32 @@ internal static class SteamAccountManager
 
     public static void AssignSpoofAccount()
     {
-        if (!UseSpoofAccount)
+        if (IsUsingSpoofAccount)
         {
             return;
         }
 
         SteamAccount account = GetAvailableSpoofAccount();
 
-        PhotonNetwork.NickName = account.Username;
-
         AddSpoofAccountInUse(account);
 
         SpoofAccount = account;
+
+        PhotonNetwork.NickName = account.Username;
     }
 
     public static void UnassignSpoofAccount()
     {
-        if (SpoofAccount == default)
+        if (!IsUsingSpoofAccount)
         {
             return;
         }
 
         RemoveSpoofAccountInUse(SpoofAccount);
 
-        PhotonNetwork.NickName = RealAccount.Username;
-
         SpoofAccount = default;
+
+        PhotonNetwork.NickName = RealAccount.Username;
     }
 
     public static void ResetSpoofAccountsInUse()
@@ -104,22 +104,30 @@ internal static class SteamAccountManager
         return false;
     }
 
-    public static void SetSpoofAccountColor(int id)
+    public static void SetCurrentSpoofAccountColor(int id)
     {
-        if (!UseSpoofAccount || SpoofAccount == default)
+        if (!IsUsingSpoofAccount)
         {
             return;
         }
 
-        SpoofAccount.SetColorId(id);
+        SpoofAccount.ColorId = id;
+
+        UpdateCurrentSpoofAccountData();
+    }
+
+    private static void UpdateCurrentSpoofAccountData()
+    {
+        if (!IsUsingSpoofAccount)
+        {
+            return;
+        }
 
         var accounts = GlobalSaveHelper.SpoofSteamAccounts.Value;
-        
+
         for (int i = 0; i < accounts.Count; i++)
         {
-            var account = accounts[i];
-
-            if (account == SpoofAccount)
+            if (accounts[i] == SpoofAccount)
             {
                 accounts[i] = SpoofAccount;
                 break;

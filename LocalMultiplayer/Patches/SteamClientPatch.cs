@@ -47,7 +47,7 @@ internal static class SteamClientPatch
 
     private static bool NamePatch(ref string __result)
     {
-        if (!SteamAccountManager.UseSpoofAccount || SteamAccountManager.SpoofAccount == default)
+        if (!SteamAccountManager.IsUsingSpoofAccount)
         {
             return true;
         }
@@ -58,7 +58,7 @@ internal static class SteamClientPatch
 
     private static bool SteamIdPatch(ref SteamId __result)
     {
-        if (!SteamAccountManager.UseSpoofAccount || SteamAccountManager.SpoofAccount == default)
+        if (!SteamAccountManager.IsUsingSpoofAccount)
         {
             return true;
         }

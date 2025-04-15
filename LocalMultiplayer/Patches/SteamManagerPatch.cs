@@ -41,7 +41,6 @@ internal static class SteamManagerPatch
 
         GlobalSaveHelper.SteamLobbyId.Value = _lobby.Id;
 
-        SteamAccountManager.UseSpoofAccount = false;
         SteamAccountManager.ResetSpoofAccountsInUse();
     }
 

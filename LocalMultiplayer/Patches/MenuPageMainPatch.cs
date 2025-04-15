@@ -12,7 +12,6 @@ internal static class MenuPageMainPatch
     [HarmonyPostfix]
     private static void StartPatch()
     {
-        SteamAccountManager.UseSpoofAccount = false;
         SteamAccountManager.UnassignSpoofAccount();
     }
 
@@ -20,7 +19,6 @@ internal static class MenuPageMainPatch
     [HarmonyPrefix]
     private static bool ButtonEventJoinGamePatch()
     {
-        SteamAccountManager.UseSpoofAccount = true;
         SteamAccountManager.AssignSpoofAccount();
 
         PhotonNetworkHelper.SetPhotonServerSettings();
