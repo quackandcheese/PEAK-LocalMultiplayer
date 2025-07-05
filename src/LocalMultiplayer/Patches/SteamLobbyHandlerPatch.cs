@@ -1,5 +1,5 @@
-﻿using com.github.quackandcheese.LocalMultiplayer;
-using com.github.quackandcheese.LocalMultiplayer.Helpers;
+﻿using com.quackandcheese.LocalMultiplayer;
+using com.quackandcheese.LocalMultiplayer.Helpers;
 using HarmonyLib;
 using Steamworks;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using Unity.Services.Lobbies.Models;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(SteamLobbyHandler))]
 internal static class SteamLobbyHandlerPatch
@@ -32,7 +32,11 @@ internal static class SteamLobbyHandlerPatch
     {
         if (!SteamAccountManager.IsUsingSpoofAccount)
         {
-            param.m_ulSteamIDUser = SteamAccountManager.SpoofAccount.SteamId;
+            if (param.m_ulSteamIDUser == SteamUser.GetSteamID().m_SteamID)
+            {
+                // If message is received from self, swap it out with spoof
+                param.m_ulSteamIDUser = SteamAccountManager.SpoofAccount.SteamId;
+            }
         }
         return true;
     }

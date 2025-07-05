@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Objects;
+namespace com.quackandcheese.LocalMultiplayer.Objects;
 
 public struct SteamAccount : IEquatable<SteamAccount>
 {

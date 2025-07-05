@@ -1,11 +1,11 @@
-﻿using com.github.quackandcheese.LocalMultiplayer.Helpers;
+﻿using com.quackandcheese.LocalMultiplayer.Helpers;
 using HarmonyLib;
 using Photon.Pun;
 using Photon.Realtime;
 using System;
 using UnityEngine;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(NetworkConnector))]
 internal static class NetworkConnectorPatch

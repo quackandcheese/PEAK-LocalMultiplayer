@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Objects;
+namespace com.quackandcheese.LocalMultiplayer.Objects;
 
 internal class JsonSave : IDisposable
 {

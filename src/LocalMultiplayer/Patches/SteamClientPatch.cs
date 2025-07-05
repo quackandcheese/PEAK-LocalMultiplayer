@@ -1,8 +1,8 @@
-﻿using com.github.quackandcheese.LocalMultiplayer;
+﻿using com.quackandcheese.LocalMultiplayer;
 using HarmonyLib;
 using Steamworks;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch]
 internal static class SteamClientPatch

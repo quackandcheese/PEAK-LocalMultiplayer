@@ -1,4 +1,4 @@
-﻿namespace com.github.quackandcheese.LocalMultiplayer.Helpers;
+﻿namespace com.quackandcheese.LocalMultiplayer.Helpers;
 
 internal static class SteamHelper
 {

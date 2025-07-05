@@ -1,9 +1,9 @@
-﻿using com.github.quackandcheese.LocalMultiplayer.Helpers;
+﻿using com.quackandcheese.LocalMultiplayer.Helpers;
 using HarmonyLib;
 using Steamworks;
 using Unity.Services.Lobbies.Models;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(MainMenu))]
 internal static class MenuPageMainPatch

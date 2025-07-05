@@ -1,4 +1,4 @@
-﻿namespace com.github.quackandcheese.LocalMultiplayer.Extensions;
+﻿namespace com.quackandcheese.LocalMultiplayer.Extensions;
 
 internal static class StringExtensions
 {

@@ -1,4 +1,4 @@
-﻿using com.github.quackandcheese.LocalMultiplayer;
+﻿using com.quackandcheese.LocalMultiplayer;
 using HarmonyLib;
 using Steamworks;
 using System;
@@ -7,7 +7,7 @@ using System.Text;
 using UnityEngine;
 using Zorro.Core;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(SteamAuthTicketService))]
 internal static class SteamAuthTicketServicePatch

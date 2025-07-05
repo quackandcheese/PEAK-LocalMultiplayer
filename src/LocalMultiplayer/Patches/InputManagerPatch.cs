@@ -1,6 +1,6 @@
 ﻿/*using HarmonyLib;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 // dont need to worry about this because you cant change keybinds in PEAK lol
 

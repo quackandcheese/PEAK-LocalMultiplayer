@@ -1,12 +1,14 @@
 # LocalMultiplayer
-[![GitHub](https://img.shields.io/badge/GitHub-LocalMultiplayer-brightgreen?style=for-the-badge&logo=GitHub)](https://github.com/ZehsTeam/REPO-LocalMultiplayer)
-[![Thunderstore Version](https://img.shields.io/thunderstore/v/Zehs/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/repo/p/Zehs/LocalMultiplayer/)
-[![Thunderstore Downloads](https://img.shields.io/thunderstore/dt/Zehs/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/repo/p/Zehs/LocalMultiplayer/)
+[![GitHub](https://img.shields.io/badge/GitHub-LocalMultiplayer-brightgreen?style=for-the-badge&logo=GitHub)](https://github.com/quackandcheese/PEAK-LocalMultiplayer)
+[![Thunderstore Version](https://img.shields.io/thunderstore/v/quackandcheese/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/peak/p/quackandcheese/LocalMultiplayer/)
+[![Thunderstore Downloads](https://img.shields.io/thunderstore/dt/quackandcheese/LocalMultiplayer?style=for-the-badge&logo=thunderstore&logoColor=white)](https://thunderstore.io/c/peak/p/quackandcheese/LocalMultiplayer/)
 
 **Play multiplayer locally with one Steam account.**
 
+*[Original mod](https://github.com/ZehsTeam/REPO-LocalMultiplayer) and README created by [ZehsTeam](https://solo.to/crithaxxog) for R.E.P.O. and modified for PEAK by quackandcheese*
+
 ## Features
-This mod allows you to connect two R.E.P.O. instances to the same multiplayer game using one Steam account.
+This mod allows you to connect two PEAK instances to the same multiplayer game using one Steam account.
 
 ## Local Co-Op
 If you want to use this mod for local co-op, I recommend using [Nucleus Co-Op](https://nucleus-coop.github.io) to control multiple instances of the game simultaneously.
@@ -27,12 +29,17 @@ This mod requires you to create your own Photon cloud applications. (This does n
 2. Set `AppIdRealtime` to your Photon `Pun` application's App ID.
 3. Set `AppIdVoice` to your Photon `Voice` application's App ID.
 
-### 3. Steam Launch Options
+### 3. Steam App ID
+1. Go to Steam and right-click PEAK.
+2. Hover over "Manage" and click "Browse local files".
+3. In the opened folder (the PEAK game directory), create a new text document named `steam_appid.txt` containing the ID `3527290`. (This should be the only text inside the document.)
+
+### 4. Steam Launch Options
 
 > [!TIP]
 > If you use the Gale mod manager, you can just set your launch mode to Direct in the settings and skip this step.
 
-1. Go to Steam and right-click R.E.P.O.
+1. Go to Steam and right-click PEAK.
 2. Click "Properties..."
 3. In the General tab, you should see an input field called "LAUNCH OPTIONS"
 4. Put this for your launch options:
@@ -43,12 +50,12 @@ This mod requires you to create your own Photon cloud applications. (This does n
 > [!IMPORTANT]
 > The file path must lead to your profile's `BepInEx.Preloader.dll` file in the `BepInEx/core` folder.
 
-### 4. Testing
+### 5. Testing
 1. Open the game.
 2. Go to Settings > Graphics.
-3. Set your window mode to Windowed. (This is for easier testing. See screenshots for an example.)
+3. Set your window mode to Windowed. (This is for easier testing.)
 4. Host a game.
-5. Open the game again. (You will have two R.E.P.O. instances open at this point.)
+5. Open the game again. (You will have two PEAK instances open at this point.)
 6. Click the join game button.
 
 ## Config Settings
@@ -65,24 +72,18 @@ You can locate the config file at this path:
 > You can paste the config file path in your Windows run box or file explorer to automatically open the config file.
 
 ## Credits
-- [BlueAmulet](https://github.com/BlueAmulet) - Providing info on how to make this mod work.
-- [Unloaded Hangar](https://github.com/UnloadedHangar) - Helping with some specific code.
+- [Zehs](https://github.com/ZehsTeam) - Creating the original mod for R.E.P.O.
+    - [BlueAmulet](https://github.com/BlueAmulet) - Providing info on how to make this mod work.
+    - [Unloaded Hangar](https://github.com/UnloadedHangar) - Helping with some specific code.
 
 ## Developer Contact
 **Report bugs, suggest features, or provide feedback:**
 
 | **Discord Server** | **Forum** | **Post** |  
 |--------------------|-----------|----------|  
-| [R.E.P.O. Modding Server](https://discord.com/invite/vPJtKhYAFe) | `#released-mods` | [LocalMultiplayer](https://discord.com/channels/1344557689979670578/1352815417579798652) |
+| [PEAK Modding Server](https://discord.gg/SAw86z24rB) | `#mod-releases` | [LocalMultiplayer](https://discord.com/channels/1363179626435707082/1391156523216142458) |
 
-- **GitHub Issues Page:** [LocalMultiplayer](https://github.com/ZehsTeam/REPO-LocalMultiplayer/issues)
-- **Links:** https://solo.to/crithaxxog
+- **GitHub Issues Page:** [LocalMultiplayer](https://github.com/quackandcheese/PEAK-LocalMultiplayer/issues)
 
+### SUPPORT THE ORIGINAL MOD CREATOR ([Zehs](https://solo.to/crithaxxog)):
 [<img src="https://i.imgur.com/duJZQTS.png" width="200px">](https://ko-fi.com/zehsteam)
-
-## Screenshots
-<img src="https://i.imgur.com/VhVYtPV.png" width="100%">
-
-----
-
-<img src="https://i.imgur.com/nHoK8yb.png" width="100%">

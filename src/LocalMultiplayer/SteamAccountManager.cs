@@ -1,11 +1,11 @@
-﻿using com.github.quackandcheese.LocalMultiplayer.Helpers;
-using com.github.quackandcheese.LocalMultiplayer.Objects;
+﻿using com.quackandcheese.LocalMultiplayer.Helpers;
+using com.quackandcheese.LocalMultiplayer.Objects;
 using Photon.Pun;
 using Steamworks;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.github.quackandcheese.LocalMultiplayer;
+namespace com.quackandcheese.LocalMultiplayer;
 
 internal static class SteamAccountManager
 {

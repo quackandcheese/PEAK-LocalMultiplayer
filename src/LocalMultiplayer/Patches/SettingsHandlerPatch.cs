@@ -1,8 +1,8 @@
-﻿using com.github.quackandcheese.LocalMultiplayer;
+﻿using com.quackandcheese.LocalMultiplayer;
 using HarmonyLib;
 using Zorro.Settings;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+namespace com.quackandcheese.LocalMultiplayer.Patches;
 
 [HarmonyPatch(typeof(SettingsHandler))]
 internal static class SettingsHandlerPatch

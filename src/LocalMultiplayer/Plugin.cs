@@ -1,10 +1,10 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
-using com.github.quackandcheese.LocalMultiplayer.Patches;
+using com.quackandcheese.LocalMultiplayer.Patches;
 using HarmonyLib;
 
-namespace com.github.quackandcheese.LocalMultiplayer;
+namespace com.quackandcheese.LocalMultiplayer;
 
 [BepInAutoPlugin]
 public partial class Plugin : BaseUnityPlugin

@@ -1,7 +1,7 @@
-﻿using com.github.quackandcheese.LocalMultiplayer.Objects;
+﻿using com.quackandcheese.LocalMultiplayer.Objects;
 using System.Collections.Generic;
 
-namespace com.github.quackandcheese.LocalMultiplayer.Helpers;
+namespace com.quackandcheese.LocalMultiplayer.Helpers;
 
 internal static class GlobalSaveHelper
 {
