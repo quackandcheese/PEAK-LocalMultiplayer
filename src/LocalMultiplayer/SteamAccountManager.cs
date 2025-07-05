@@ -1,11 +1,11 @@
-﻿using com.github.zehsteam.LocalMultiplayer.Helpers;
-using com.github.zehsteam.LocalMultiplayer.Objects;
+﻿using com.github.quackandcheese.LocalMultiplayer.Helpers;
+using com.github.quackandcheese.LocalMultiplayer.Objects;
 using Photon.Pun;
 using Steamworks;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.github.zehsteam.LocalMultiplayer;
+namespace com.github.quackandcheese.LocalMultiplayer;
 
 internal static class SteamAccountManager
 {
@@ -24,7 +24,7 @@ internal static class SteamAccountManager
             return;
         }
 
-        RealAccount = new SteamAccount(SteamClient.Name, SteamClient.SteamId);
+        RealAccount = new SteamAccount(SteamFriends.GetPersonaName(), SteamUser.GetSteamID().m_SteamID);
 
         CreateSpoofAccounts();
 
@@ -104,7 +104,7 @@ internal static class SteamAccountManager
         return false;
     }
 
-    public static void SetCurrentSpoofAccountColor(int id)
+/*    public static void SetCurrentSpoofAccountColor(int id)
     {
         if (!IsUsingSpoofAccount)
         {
@@ -114,7 +114,7 @@ internal static class SteamAccountManager
         SpoofAccount.ColorId = id;
 
         UpdateCurrentSpoofAccountData();
-    }
+    }*/
 
     private static void UpdateCurrentSpoofAccountData()
     {
@@ -162,7 +162,7 @@ internal static class SteamAccountManager
 
         if (accounts.Count == 0)
         {
-            Logger.LogWarning("SteamHelper: No cached spoof steam accounts available. Generating new spoof steam account.");
+            Plugin.Log.LogWarning("SteamHelper: No cached spoof steam accounts available. Generating new spoof steam account.");
             return new SteamAccount($"Player {Random.Range(100, 999)}", SteamHelper.GenerateRandomSteamId());
         }
 

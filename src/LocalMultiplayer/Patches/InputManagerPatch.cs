@@ -1,6 +1,8 @@
-﻿using HarmonyLib;
+﻿/*using HarmonyLib;
 
-namespace com.github.zehsteam.LocalMultiplayer.Patches;
+namespace com.github.quackandcheese.LocalMultiplayer.Patches;
+
+// dont need to worry about this because you cant change keybinds in PEAK lol
 
 [HarmonyPatch(typeof(InputManager))]
 internal static class InputManagerPatch
@@ -9,23 +11,24 @@ internal static class InputManagerPatch
     [HarmonyPrefix]
     private static bool SaveDefaultKeyBindingsPatch()
     {
-        if (!SteamAccountManager.IsUsingSpoofAccount)
+        if (SteamAccountManager.IsUsingSpoofAccount)
         {
-            return true;
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     [HarmonyPatch(nameof(InputManager.SaveCurrentKeyBindings))]
     [HarmonyPrefix]
     private static bool SaveCurrentKeyBindingsPatch()
     {
-        if (!SteamAccountManager.IsUsingSpoofAccount)
+        if (SteamAccountManager.IsUsingSpoofAccount)
         {
-            return true;
+            return false;
         }
 
-        return false;
+        return true;
     }
 }
+*/

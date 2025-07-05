@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 
-namespace com.github.zehsteam.LocalMultiplayer.Objects;
+namespace com.github.quackandcheese.LocalMultiplayer.Objects;
 
 internal class JsonSave : IDisposable
 {
@@ -50,7 +50,7 @@ internal class JsonSave : IDisposable
 
         if (_data == null)
         {
-            Logger.LogError($"TryLoad: Data is null. Key: {key}");
+            Plugin.Log.LogError($"TryLoad: Data is null. Key: {key}");
             return false;
         }
 
@@ -63,7 +63,7 @@ internal class JsonSave : IDisposable
             }
             catch (Exception ex)
             {
-                Logger.LogError($"TryLoad: Failed to deserialize key '{key}'. {ex.Message}");
+                Plugin.Log.LogError($"TryLoad: Failed to deserialize key '{key}'. {ex.Message}");
             }
         }
 
@@ -80,7 +80,7 @@ internal class JsonSave : IDisposable
 
             if (!hasHandle)
             {
-                Logger.LogWarning("Save: Could not acquire mutex.");
+                Plugin.Log.LogWarning("Save: Could not acquire mutex.");
                 return false;
             }
 
@@ -97,7 +97,7 @@ internal class JsonSave : IDisposable
         }
         catch (Exception ex)
         {
-            Logger.LogError($"Save: Error saving key '{key}'. {ex.Message}");
+            Plugin.Log.LogError($"Save: Error saving key '{key}'. {ex.Message}");
             return false;
         }
         finally
@@ -115,7 +115,7 @@ internal class JsonSave : IDisposable
         {
             if (!File.Exists(FilePath))
             {
-                Logger.LogWarning($"ReadFile: Save file not found at \"{FilePath}\". Creating new.");
+                Plugin.Log.LogWarning($"ReadFile: Save file not found at \"{FilePath}\". Creating new.");
                 return [];
             }
 
@@ -126,7 +126,7 @@ internal class JsonSave : IDisposable
         }
         catch (Exception ex)
         {
-            Logger.LogError($"ReadFile: Failed to read file \"{FilePath}\". {ex.Message}");
+            Plugin.Log.LogError($"ReadFile: Failed to read file \"{FilePath}\". {ex.Message}");
             return [];
         }
     }
@@ -146,7 +146,7 @@ internal class JsonSave : IDisposable
         }
         catch (Exception ex)
         {
-            Logger.LogError($"WriteFile: Failed to write file \"{FilePath}\". {ex.Message}");
+            Plugin.Log.LogError($"WriteFile: Failed to write file \"{FilePath}\". {ex.Message}");
             return false;
         }
     }
@@ -157,7 +157,7 @@ internal class JsonSave : IDisposable
 
         if (_data == null)
         {
-            Logger.LogError("RefreshData: Data is null. Creating new.");
+            Plugin.Log.LogError("RefreshData: Data is null. Creating new.");
             _data = [];
         }
     }

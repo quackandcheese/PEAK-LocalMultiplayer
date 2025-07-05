@@ -1,13 +1,15 @@
-﻿using HarmonyLib;
+﻿using com.github.quackandcheese.LocalMultiplayer;
+using HarmonyLib;
+using Zorro.Settings;
 
-namespace com.github.zehsteam.LocalMultiplayer.Patches;
+namespace com.github.quackandcheese.LocalMultiplayer.Patches;
 
-[HarmonyPatch(typeof(DataDirector))]
-internal static class DataDirectorPatch
+[HarmonyPatch(typeof(SettingsHandler))]
+internal static class SettingsHandlerPatch
 {
-    [HarmonyPatch(nameof(DataDirector.SaveSettings))]
+    [HarmonyPatch(nameof(SettingsHandler.SaveSetting))]
     [HarmonyPrefix]
-    private static bool SaveSettingsPatch()
+    private static bool SaveSettingPatch(ref Setting setting)
     {
         if (!SteamAccountManager.IsUsingSpoofAccount)
         {
@@ -17,9 +19,9 @@ internal static class DataDirectorPatch
         return false;
     }
 
-    [HarmonyPatch(nameof(DataDirector.ColorSetBody))]
+/*    [HarmonyPatch(nameof(CharacterCustomization.SetCustomizationData))]
     [HarmonyPrefix]
-    private static bool ColorSetBodyPatch(int colorID)
+    private static bool SetCustomizationDataPatch(ref CharacterCustomizationData customizationData, ref Photon.Realtime.Player player)
     {
         if (!SteamAccountManager.IsUsingSpoofAccount)
         {
@@ -28,9 +30,9 @@ internal static class DataDirectorPatch
 
         SteamAccountManager.SetCurrentSpoofAccountColor(colorID);
         return false;
-    }
+    }*/
 
-    [HarmonyPatch(nameof(DataDirector.ColorGetBody))]
+/*    [HarmonyPatch(nameof(DataDirector.ColorGetBody))]
     [HarmonyPrefix]
     private static bool ColorGetBodyPatch(ref int __result)
     {
@@ -41,5 +43,5 @@ internal static class DataDirectorPatch
 
         __result = SteamAccountManager.SpoofAccount.ColorId;
         return false;
-    }
+    }*/
 }

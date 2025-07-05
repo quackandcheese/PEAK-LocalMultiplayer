@@ -58,7 +58,7 @@ This mod uses a global config file so you don't have to configure your settings 
 
 You can locate the config file at this path:
 ```
-%localappdata%\..\LocalLow\semiwork\Repo\LocalMultiplayer\global.cfg
+%localappdata%\..\LocalLow\LandCrab\PEAK\LocalMultiplayer\global.cfg
 ```
 
 > [!TIP]

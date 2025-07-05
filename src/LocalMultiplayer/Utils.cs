@@ -3,13 +3,13 @@ using BepInEx.Configuration;
 using System.IO;
 using UnityEngine;
 
-namespace com.github.zehsteam.LocalMultiplayer;
+namespace com.github.quackandcheese.LocalMultiplayer;
 
 internal static class Utils
 {
     public static string GetPluginPersistentDataPath()
     {
-        return Path.Combine(Application.persistentDataPath, MyPluginInfo.PLUGIN_NAME);
+        return Path.Combine(Application.persistentDataPath, Plugin.Name);
     }
 
     public static ConfigFile CreateConfigFile(BaseUnityPlugin plugin, string path, string name = null, bool saveOnInit = false)

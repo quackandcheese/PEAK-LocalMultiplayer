@@ -1,4 +1,4 @@
-﻿namespace com.github.zehsteam.LocalMultiplayer.Objects;
+﻿namespace com.github.quackandcheese.LocalMultiplayer.Objects;
 
 internal class JsonSaveValue<T>(JsonSave jsonSave, string key, T defaultValue = default)
 {

@@ -1,7 +1,7 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
 
-namespace com.github.zehsteam.LocalMultiplayer.Helpers;
+namespace com.github.quackandcheese.LocalMultiplayer.Helpers;
 
 internal static class PhotonNetworkHelper
 {

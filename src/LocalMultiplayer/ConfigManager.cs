@@ -1,6 +1,6 @@
 ﻿using BepInEx.Configuration;
 
-namespace com.github.zehsteam.LocalMultiplayer;
+namespace com.github.quackandcheese.LocalMultiplayer;
 
 internal static class ConfigManager
 {

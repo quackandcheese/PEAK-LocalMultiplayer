@@ -1,7 +1,7 @@
-﻿using com.github.zehsteam.LocalMultiplayer.Objects;
+﻿using com.github.quackandcheese.LocalMultiplayer.Objects;
 using System.Collections.Generic;
 
-namespace com.github.zehsteam.LocalMultiplayer.Helpers;
+namespace com.github.quackandcheese.LocalMultiplayer.Helpers;
 
 internal static class GlobalSaveHelper
 {

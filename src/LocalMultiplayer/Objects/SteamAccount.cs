@@ -1,22 +1,16 @@
 ﻿using System;
 
-namespace com.github.zehsteam.LocalMultiplayer.Objects;
+namespace com.github.quackandcheese.LocalMultiplayer.Objects;
 
 public struct SteamAccount : IEquatable<SteamAccount>
 {
     public string Username;
     public ulong SteamId;
-    public int ColorId;
 
     public SteamAccount(string username, ulong steamId)
     {
         Username = username;
         SteamId = steamId;
-    }
-
-    public SteamAccount(string username, ulong steamId, int colorIndex) : this(username, steamId)
-    {
-        ColorId = colorIndex;
     }
 
     public bool Equals(SteamAccount other)
