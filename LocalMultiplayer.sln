@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B56DCF06-72DD-4BA3-9A09-20D57EBD02C6}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalMultiplayer", "src\LocalMultiplayer\LocalMultiplayer.csproj", "{485DF1C3-4696-53BC-9C69-03090585D81A}"
 EndProject
 Global
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+    	{485DF1C3-4696-53BC-9C69-03090585D81A} = {B56DCF06-72DD-4BA3-9A09-20D57EBD02C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92370600-58E2-48BA-A029-C60C47F23EC2}

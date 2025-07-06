@@ -6,9 +6,9 @@ repository = "https://thunderstore.io"
 
 [package]
 namespace = "quackandcheese"
-name = "ItemKO"
-description = "Thrown items now can knock out players!"
-websiteUrl = "" # TODO: Add a link to your mod repository here (optional)
+name = "LocalMultiplayer"
+description = "Play multiplayer locally with one Steam account. Check the README for setup instructions."
+websiteUrl = "https://github.com/quackandcheese/PEAK-LocalMultiplayer"
 containsNsfwContent = false
 
 [package.dependencies]
@@ -20,7 +20,7 @@ readme = "../../README.md"
 outdir = "../../artifacts/thunderstore/"
 
 [[build.copy]]
-source = "../../artifacts/bin/ItemKO/release/com.quackandcheese.ItemKO.dll"
+source = "../../artifacts/bin/LocalMultiplayer/release/com.quackandcheese.LocalMultiplayer.dll"
 target = "plugins/"
 
 [[build.copy]]
@@ -41,4 +41,4 @@ communities = [ "peak", ]
 [publish.categories]
 # See categories at:
 # https://thunderstore.io/api/experimental/community/peak/category/
-peak = [ "mods", ]
+peak = [ "mods", "tools", "misc" ]
