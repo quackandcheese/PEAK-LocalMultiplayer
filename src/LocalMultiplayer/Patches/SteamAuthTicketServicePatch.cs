@@ -1,4 +1,4 @@
-﻿using com.quackandcheese.LocalMultiplayer;
+﻿/*using com.quackandcheese.LocalMultiplayer;
 using HarmonyLib;
 using Steamworks;
 using System;
@@ -18,6 +18,8 @@ internal static class SteamAuthTicketServicePatch
     {
         if (!IsValidClient())
         {
+            Plugin.Log.LogError("Invalid Steam client detected. Exiting application to prevent issues.");
+
             Application.Quit();
         }
     }
@@ -31,7 +33,8 @@ internal static class SteamAuthTicketServicePatch
             return false;
         }
 
-        EBeginAuthSessionResult beginAuthResult = SteamUser.BeginAuthSession(HexStringToByteArray(authTicket.Value.TicketData), authTicket.Value.TicketData.Length, SteamUser.GetSteamID());
+        var convertedTicket = HexStringToByteArray(authTicket.Value.TicketData);
+        EBeginAuthSessionResult beginAuthResult = SteamUser.BeginAuthSession(convertedTicket, convertedTicket.Length, SteamUser.GetSteamID());
         return beginAuthResult == EBeginAuthSessionResult.k_EBeginAuthSessionResultOK;
     }
 
@@ -50,3 +53,4 @@ internal static class SteamAuthTicketServicePatch
     }
 }
 
+*/
