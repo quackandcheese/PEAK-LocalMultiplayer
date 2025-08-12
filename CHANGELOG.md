@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2025-08-11
+
+### Fixed
+
+- Migrated invalid `MainMenu.Initialize` harmony patch to `MainMenu.Start`
+
 ## [1.0.2] - 2025-08-09
 
 - Updated README

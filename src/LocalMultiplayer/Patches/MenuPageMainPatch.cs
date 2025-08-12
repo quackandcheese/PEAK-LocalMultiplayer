@@ -8,9 +8,9 @@ namespace com.quackandcheese.LocalMultiplayer.Patches;
 [HarmonyPatch(typeof(MainMenu))]
 internal static class MenuPageMainPatch
 {
-    [HarmonyPatch(nameof(MainMenu.Initialize))]
+    [HarmonyPatch(nameof(MainMenu.Start))]
     [HarmonyPostfix]
-    private static void InitializePatch()
+    private static void StartPatch()
     {
         SteamAccountManager.UnassignSpoofAccount();
     }
