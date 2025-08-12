@@ -11,7 +11,7 @@
 This mod allows you to connect two PEAK instances to the same multiplayer game using one Steam account.
 
 ## Local Co-Op
-If you want to use this mod for local co-op, I recommend using [Nucleus Co-Op](https://nucleus-coop.github.io) to control multiple instances of the game simultaneously.
+If you want to use this mod for local co-op, an recommended alternative is [Nucleus Co-Op](https://nucleus-coop.github.io). A quick warning though, their PEAK handler is currently locked behind the [Nucleus Co-op Patreon](https://www.patreon.com/posts/peak-132839994) for $5. It will be made public eventually, or you could make your own by following [this guide](https://www.splitscreen.me/docs/create-handlers).
 
 ## Usage
 This mod requires you to create your own Photon cloud applications. (This does not require any payment.)
@@ -56,7 +56,7 @@ This mod requires you to create your own Photon cloud applications. (This does n
 3. Set your window mode to Windowed. (This is for easier testing.)
 4. Host a game.
 5. Open the game again. (You will have two PEAK instances open at this point.)
-6. Click the join game button.
+6. Click the "Play Offline" button.
 
 ## Config Settings
 You must open your game at least once with the mod installed for the config file to get generated.
