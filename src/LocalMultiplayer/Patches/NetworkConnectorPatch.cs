@@ -1,5 +1,6 @@
 ﻿using com.quackandcheese.LocalMultiplayer.Helpers;
 using HarmonyLib;
+using Peak.Network;
 using Photon.Pun;
 using Photon.Realtime;
 using System;
@@ -15,13 +16,5 @@ internal static class NetworkConnectorPatch
     private static void StartPatch()
     {
         PhotonNetworkHelper.SetPhotonServerSettings();
-    }
-
-    [HarmonyPatch(nameof(NetworkConnector.LoadUserID))]
-    [HarmonyPrefix]
-    private static bool LoadUserIDPatch(ref AuthenticationValues __result)
-    {
-        __result = new AuthenticationValues(Guid.NewGuid().ToString());
-        return false;
     }
 }
