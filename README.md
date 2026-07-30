@@ -11,7 +11,7 @@
 This mod allows you to connect two PEAK instances to the same multiplayer game using one Steam account.
 
 ## Local Co-Op
-If you want to use this mod for local co-op, an recommended alternative is [Nucleus Co-Op](https://nucleus-coop.github.io). A quick warning though, their PEAK handler is currently locked behind the [Nucleus Co-op Patreon](https://www.patreon.com/posts/peak-132839994) for $5. It will be made public eventually, or you could make your own by following [this guide](https://www.splitscreen.me/docs/create-handlers).
+If you want to use this mod for local co-op, a recommended alternative is [Nucleus Co-Op](https://nucleus-coop.github.io). Their PEAK handler is free, and can be found [here](https://hub.splitscreen.me/handler/rLSxwziuvTcuF3GTp).
 
 ## Usage
 This mod requires you to create your own Photon cloud applications. (This does not require any payment.)
@@ -75,6 +75,9 @@ You can locate the config file at this path:
 - [Zehs](https://github.com/ZehsTeam) - Creating the original mod for R.E.P.O.
     - [BlueAmulet](https://github.com/BlueAmulet) - Providing info on how to make this mod work.
     - [Unloaded Hangar](https://github.com/UnloadedHangar) - Helping with some specific code.
+- [mondash](https://github.com/mondash) - Fix for v1.0.3
+- [Snosz](https://github.com/Snosz) - Fix for v1.0.4
+- [endors-toi](https://github.com/endors-toi) - Fix for v1.0.5
 
 ## Developer Contact
 **Report bugs, suggest features, or provide feedback:**
