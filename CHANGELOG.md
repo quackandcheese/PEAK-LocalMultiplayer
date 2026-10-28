@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.6] - 2026-10-28
+
+### Fixed
+
+- Publicized `SteamManagerAssembly` to fix patch on `SteamManager.Awake`.
+
 ## [1.0.5] - 2026-07-30
 
 ### Fixed
