@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7] - 2026-11-18
+
+### Fixed
+
+- Fixed instances not being able to join each other after PEAK's console/crossplay update. PEAK now logs in to Photon with Steam authentication, so the mod now connects with your own App IDs, `AuthType None` and a separate UserId for each instance.
+- The joining instance now reconnects to Photon as its spoof account and waits until Photon is ready before joining the lobby.
+
 ## [1.0.6] - 2026-10-28
 
 ### Fixed
