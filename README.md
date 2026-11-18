@@ -24,6 +24,9 @@ This mod requires you to create your own Photon cloud applications. (This does n
 5. Create a new Photon cloud application and select `Voice` for the Photon SDK.
 6. Choose any name you would like and click Create.
 
+> [!NOTE]
+> Leave the applications' authentication settings at their defaults (no authentication providers). PEAK normally logs in to Photon with Steam authentication, which your own application can't verify, so the mod connects with `AuthType None` and gives each instance its own UserId. This only happens when `AppIdRealtime` is set in the config.
+
 ### 2. Config Settings
 1. Open the config file. (See the Config Settings section on how to find the config file.)
 2. Set `AppIdRealtime` to your Photon `Pun` application's App ID.

@@ -29,7 +29,9 @@ internal static class MenuPageMainPatch
             m_steamIDFriend = SteamUser.GetSteamID()
         };
         GameHandler.GetService<SteamLobbyHandler>().OnLobbyJoinRequested(req);*/
-        GameHandler.GetService<SteamLobbyHandler>().TryJoinLobby(new CSteamID(GlobalSaveHelper.SteamLobbyId.Value));
+        CSteamID lobby = new CSteamID(GlobalSaveHelper.SteamLobbyId.Value);
+        Plugin.Instance.StartCoroutine(PhotonNetworkHelper.ReconnectAsSpoofThenJoin(
+            () => GameHandler.GetService<SteamLobbyHandler>().TryJoinLobby(lobby)));
 
         return false;
     }
